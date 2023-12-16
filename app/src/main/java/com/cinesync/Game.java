@@ -2,43 +2,66 @@ package com.cinesync;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 public class Game extends AppCompatActivity {
+    TextView categoriaText;
+    DbHelper admin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_game);
 
-        // Supongamos que tienes un ImageView con id "imageView" en tu layout
-        ImageView imageView = findViewById(R.id.imageView);
+            // Añadir registros de log para depurar
+            Log.d("GameActivity", "Antes de inicializar DbHelper");
 
-        // URL de la imagen en tu base de datos
-        String imageUrl = "https://www.nationalgeographic.com.es/medio/2022/12/12/rana-1_66a9a5c8_221212161515_1280x720.jpg";
+            admin = new DbHelper(this, "bd1");
 
-        // Cargar la imagen con Picasso
-        Picasso.get()
-                .load(imageUrl)
-                .into(imageView, new Callback() {
-                    @Override
-                    public void onSuccess() {
-                        // La imagen se cargó con éxito
-                    }
+            // Añadir registros de log para depurar
+            Log.d("GameActivity", "Después de inicializar DbHelper");
 
-                    @Override
-                    public void onError(Exception e) {
-                        // Error al cargar la imagen
-                        e.printStackTrace();
-                    }
-                });
-
-        Picasso.get().setLoggingEnabled(true);
-
-
+            String c = obtenerCategoria();
+            categoriaText = findViewById(R.id.categoria);
+            categoriaText.setText("Categoria " + c);
     }
+
+    public String obtenerCategoria() {
+        SQLiteDatabase bd = admin.getReadableDatabase();
+        List<String> categorias = new ArrayList<>(); // Obtener todas las categorías distintas
+
+        Cursor fila = bd.rawQuery("SELECT DISTINCT tag FROM preguntas", null);
+        if (fila.moveToFirst()) {
+            do {
+                int index = fila.getColumnIndex("tag");
+                String cat= fila.getString(index);
+                categorias.add(cat);
+            } while (fila.moveToNext());
+        }
+
+        fila.close();
+
+        if (!categorias.isEmpty()) {
+            Random random = new Random();
+            int indiceAleatorio = random.nextInt(categorias.size()); // Obtener índice aleatorio
+            return categorias.get(indiceAleatorio); // Devolver categoría aleatoria
+        } else {
+            return "Sin categorías disponibles";
+        }
+    }
+
 }
