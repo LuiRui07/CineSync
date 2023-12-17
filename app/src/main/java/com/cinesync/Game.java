@@ -21,6 +21,8 @@ public class Game extends AppCompatActivity {
     TextView categoriaText;
     DbHelper admin;
 
+    String categoria;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +37,8 @@ public class Game extends AppCompatActivity {
             // Añadir registros de log para depurar
             Log.d("GameActivity", "Después de inicializar DbHelper");
 
-            String c = obtenerCategoria();
+            categoria = obtenerCategoria();
+
             categoriaText = findViewById(R.id.categoria);
             categoriaText.setText("Categoria " + c);
     }
