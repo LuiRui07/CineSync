@@ -2,11 +2,15 @@ package com.cinesync;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,8 +24,12 @@ import java.util.Random;
 public class Game extends AppCompatActivity {
     TextView categoriaText;
     DbHelper admin;
-
     String categoria;
+    ImageButton ImgOp1,ImgOp2,ImgOp3,ImgOp4;
+
+    boolean respondida = false;
+
+    int rpCorrectaActual;
 
 
     @Override
@@ -30,6 +38,11 @@ public class Game extends AppCompatActivity {
             setContentView(R.layout.activity_game);
 
             admin = new DbHelper(this, "bd1");
+
+            ImgOp1 = findViewById(R.id.imageButton1);
+            ImgOp2 = findViewById(R.id.imageButton2);
+            ImgOp3 = findViewById(R.id.imageButton3);
+            ImgOp4 = findViewById(R.id.imageButton4);
 
             categoria = obtenerCategoria();
             categoriaText = findViewById(R.id.categoria);
@@ -65,18 +78,48 @@ public class Game extends AppCompatActivity {
         SQLiteDatabase bd = admin.getReadableDatabase();
         Cursor fila = bd.rawQuery("select nucleo,respuestasTexto,respuestasImagenes,respuestaCorrecta from preguntas where tag='"+cat+"'",null);
         if (fila.moveToFirst()) {
-            do {
+           // do {
                 String nucleo = fila.getString(0);
                 String respustasTexto = fila.getString(1);
                 String respuestasImagenes = fila.getString(2);
                 int respuestaCorrecta = fila.getInt(3);
                 crearPregunta(nucleo,respustasTexto,respuestasImagenes,respuestaCorrecta);
-            } while (fila.moveToNext());
+           // } while (fila.moveToNext());
         }
     }
 
     public void crearPregunta(String nuc, String rpTX, String rpImg, int rpC){
     //Aqui las creamos como tal 1 a 1.
+        rpCorrectaActual = rpC;
+        if (!TextUtils.isEmpty(rpImg)){ //Habria que tener en cuenta si hay 3 o 4 imagenes
+            String[] enlacesArray = rpImg.split(",");
+            ImageButton[] imageButtonsArray = {ImgOp1, ImgOp2, ImgOp3, ImgOp4};
+
+            for (int i = 0; i < enlacesArray.length && i < imageButtonsArray.length; i++) {
+                String enlace = enlacesArray[i];
+                ImageButton imageButton = imageButtonsArray[i];
+                // Utiliza Picasso para cargar la imagen en el ImageButton
+                Picasso.get().load(enlace).into(imageButton);
+            }
+        }
+
+    }
+
+    public void pulsado(View view){
+        ImageButton imageButton = (ImageButton) view; //Aqui veo que boton ha pulsado
+        //Comprobar si es correcta o no
+        int buttonId = imageButton.getId();
+
+        if (buttonId == R.id.imageButton1) {
+            Log.d("MiApp", "Se presionó el 1");
+        } else if (buttonId == R.id.imageButton2) {
+            Log.d("MiApp", "Se presionó el 2");
+        }else if (buttonId == R.id.imageButton3) {
+            Log.d("MiApp", "Se presionó el 3");
+        }else if (buttonId == R.id.imageButton4) {
+            Log.d("MiApp", "Se presionó el 4");
+        }
+
     }
 
 }

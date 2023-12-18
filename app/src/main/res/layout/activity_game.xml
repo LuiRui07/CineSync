@@ -7,25 +7,45 @@
     android:background="#808080"
     tools:context=".Game">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="356dp"
+    <LinearLayout
+        android:layout_width="237dp"
+        android:layout_height="51dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.905">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="232dp"
-        android:layout_height="540dp"
-        android:layout_marginBottom="44dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="89dp">
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pulsado"
+            android:src="@android:drawable/btn_star" />
 
-    </FrameLayout>
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pulsado"
+            android:src="@android:drawable/btn_star" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pulsado"
+            android:src="@android:drawable/btn_star" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="pulsado"
+            android:src="@android:drawable/btn_star" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/categoria"
