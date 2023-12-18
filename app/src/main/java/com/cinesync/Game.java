@@ -29,18 +29,12 @@ public class Game extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_game);
 
-            // Añadir registros de log para depurar
-            Log.d("GameActivity", "Antes de inicializar DbHelper");
-
             admin = new DbHelper(this, "bd1");
 
-            // Añadir registros de log para depurar
-            Log.d("GameActivity", "Después de inicializar DbHelper");
-
             categoria = obtenerCategoria();
-
             categoriaText = findViewById(R.id.categoria);
-            categoriaText.setText("Categoria " + c);
+            categoriaText.setText(categoria);
+            crearPreguntas(categoria);
     }
 
     public String obtenerCategoria() {
@@ -65,6 +59,24 @@ public class Game extends AppCompatActivity {
         } else {
             return "Sin categorías disponibles";
         }
+    }
+
+    public void crearPreguntas(String cat){
+        SQLiteDatabase bd = admin.getReadableDatabase();
+        Cursor fila = bd.rawQuery("select nucleo,respuestasTexto,respuestasImagenes,respuestaCorrecta from preguntas where tag='"+cat+"'",null);
+        if (fila.moveToFirst()) {
+            do {
+                String nucleo = fila.getString(0);
+                String respustasTexto = fila.getString(1);
+                String respuestasImagenes = fila.getString(2);
+                int respuestaCorrecta = fila.getInt(3);
+                crearPregunta(nucleo,respustasTexto,respuestasImagenes,respuestaCorrecta);
+            } while (fila.moveToNext());
+        }
+    }
+
+    public void crearPregunta(String nuc, String rpTX, String rpImg, int rpC){
+    //Aqui las creamos como tal 1 a 1.
     }
 
 }
