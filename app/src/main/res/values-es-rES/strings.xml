@@ -6,4 +6,9 @@
     <string name="CategoriaCompletada"> Categoria Terminada</string>
     <string name="Correcta"> Correcta </string>
     <string name="Incorrecta"> Incorrecta </string>
+    <string name="Agregar">Agregar</string>
+    <string name="Consultar">Consultar</string>
+    <string name="Borrar">Borrar</string>
+    <string name="Inicio">Pantalla Inicio</string>
+    <string name="Jugar">A Jugar</string>
 </resources>
