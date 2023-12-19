@@ -1,9 +1,12 @@
 package com.cinesync;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -12,7 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
+    private static final int MY_PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 1;
     DbHelper admin;
     EditText etTag, etNucleo, etRespuestasTexto, etRespuestasImagenes,etRespuestaCorrecta;
 
@@ -20,12 +23,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         etTag = findViewById(R.id.etTag);
         etNucleo = findViewById(R.id.etNucleo);
         etRespuestasTexto = findViewById(R.id.etRespuestasTexto);
         etRespuestasImagenes = findViewById(R.id.etRespuestasImagenes);
         etRespuestaCorrecta= findViewById(R.id.etRespuestaCorrecta);
         admin =  new DbHelper(this,"bd1");
+
+        admin.insertDataFromCSV("preguntas");
     }
 
     public void agregar(View v){

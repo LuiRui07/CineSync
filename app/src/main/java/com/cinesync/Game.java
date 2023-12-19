@@ -8,28 +8,21 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.sax.TextElementListener;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class Game extends AppCompatActivity {
-    TextView categoriaText;
+    TextView preguntaText;
     TextView nucleoText;
     DbHelper admin;
     String categoria;
@@ -41,6 +34,8 @@ public class Game extends AppCompatActivity {
     boolean finCategoria = false;
     Cursor fila;
     int rpCorrectaActual;
+
+    int puntuacion;
 
 
     @Override
@@ -62,10 +57,42 @@ public class Game extends AppCompatActivity {
 
             nucleoText = findViewById(R.id.nucleo);
             categoria = obtenerCategoria();
-            categoriaText = findViewById(R.id.categoria);
-            categoriaText.setText(categoria);
+            preguntaText = findViewById(R.id.pregunta);
+            preguntaText.setText(stringTraducido(categoria));
+            puntuacion = 0;
             crearCategoria(categoria);
 
+    }
+
+    public String stringTraducido(String categoria) {
+        String res = "";
+        switch (categoria) {
+            case "director" :
+                res = getString(R.string.director);
+                break;
+            case "fecha" :
+                res = getString(R.string.fecha);
+                break;
+            case "descripcion" :
+                res = getString(R.string.oscars);
+                break;
+            case "randomT" :
+                res = getString(R.string.randomTitanic);
+                break;
+            case "randomB" :
+                res = getString(R.string.randomBrando);
+                break;
+            case "randomF" :
+                res = getString(R.string.randomForce);
+                break;
+            case "RandomD" :
+                res = getString(R.string.randomDeNiro);
+                break;
+            default:
+                break;
+        }
+
+        return res;
     }
 
     public String obtenerCategoria() {
@@ -105,9 +132,12 @@ public class Game extends AppCompatActivity {
         indexCategoria++;
         if (indexCategoria > categorias.size()){
             Toast.makeText(this,R.string.JuegoTerminado, Toast.LENGTH_SHORT).show();
+            Intent finJuego = new Intent(this, FinPartida.class);
+            finJuego.putExtra("puntuacion", puntuacion);
+            startActivity(finJuego);
         } else {
             categoria = categorias.get(indexCategoria);
-            categoriaText.setText(categoria);
+            preguntaText.setText(stringTraducido(categoria));
         }
         crearCategoria(categoria);
     }
@@ -217,6 +247,7 @@ public class Game extends AppCompatActivity {
         }
 
         if (respuesta == rpCorrectaActual){
+            puntuacion++;
             Toast.makeText(this,R.string.Correcta, Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this,R.string.Incorrecta, Toast.LENGTH_SHORT).show();

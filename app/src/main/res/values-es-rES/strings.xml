@@ -11,4 +11,13 @@
     <string name="Borrar">Borrar</string>
     <string name="Inicio">Pantalla Inicio</string>
     <string name="Jugar">A Jugar</string>
+    <string name="director">¿Qué película dirige el director</string>
+    <string name="fecha">¿En qué año se estrenó la película</string>
+    <string name="descripcion">¿Que película describe esta sinopsis?</string>
+    <string name="oscars">¿Por qué película se llevó esta persona un Oscar?</string>
+    <string name="randomTitanic">¿Quien dirigio la película Titanic?</string>
+    <string name="randomBrando">¿Cual es el nombre del personaje que interpreta Marlon Brando en El Padrino?</string>
+    <string name="randomForce">¿De qué película es la famosa frase: Que la fuerza te acompañe?</string>
+    <string name="randomDeNiro">¿Cuál es la famosa frase dicha por Robert De Niro en Taxi Driver?</string>
+    <string name="puntuacion">Felicidades tu puntuacion es</string>
 </resources>
