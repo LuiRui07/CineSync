@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CineSync</string>
+    <string name="hello">Hello</string>
+    <string name="SinCategorias">No categories available</string>
+    <string name="JuegoTerminado"> You have finished the game!</string>
+    <string name="CategoriaCompletada"> Category Finished</string>
+    <string name="Correcta"> Right </string>
+    <string name="Incorrecta"> Wrong </string>
 </resources>

@@ -94,7 +94,7 @@ public class Game extends AppCompatActivity {
         if (!categorias.isEmpty()) {
             Collections.shuffle(categorias);
         } else {
-            Toast.makeText(this,"Sin categorias", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.SinCategorias, Toast.LENGTH_SHORT).show();
         }
         return categorias;
     }
@@ -104,7 +104,7 @@ public class Game extends AppCompatActivity {
     public void siguienteCategoria(){
         indexCategoria++;
         if (indexCategoria > categorias.size()){
-            Toast.makeText(this,"Has completado todas las categorias", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.JuegoTerminado, Toast.LENGTH_SHORT).show();
         } else {
             categoria = categorias.get(indexCategoria);
             categoriaText.setText(categoria);
@@ -134,7 +134,7 @@ public class Game extends AppCompatActivity {
             int respuestaCorrecta = fila.getInt(3);
             crearPregunta(nucleo,respustasTexto,respuestasImagenes,respuestaCorrecta);
         } else {
-            Toast.makeText(this,"Cateogoria Completada", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.CategoriaCompletada, Toast.LENGTH_SHORT).show();
             sleep(3);
             siguienteCategoria();
         }
@@ -217,9 +217,9 @@ public class Game extends AppCompatActivity {
         }
 
         if (respuesta == rpCorrectaActual){
-            Toast.makeText(this,"Respuesta Correcta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.Correcta, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this,"Respuesta Incorrecta", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,R.string.Incorrecta, Toast.LENGTH_SHORT).show();
         }
         siguientePregunta();
 

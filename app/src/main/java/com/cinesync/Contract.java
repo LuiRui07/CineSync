@@ -4,9 +4,7 @@ import android.provider.BaseColumns;
 
 public class Contract {
 
-    private Contract() {
-
-    }
+    private Contract() {}
 
     public static abstract class DbEntry implements BaseColumns {
         public static final String TABLE_NAME = "PREGUNTA";
