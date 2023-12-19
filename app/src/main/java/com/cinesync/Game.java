@@ -68,6 +68,14 @@ public class Game extends AppCompatActivity {
 
     }
 
+    public String obtenerCategoria() {
+        categorias = obtenerCategorias();
+        categoria = categorias.get(0);
+        indexCategoria = 0 ;
+
+        return categoria;
+    }
+
     public List<String> obtenerCategorias() {
         SQLiteDatabase bd = admin.getReadableDatabase();
         List<String> categorias = new ArrayList<>(); // Obtener todas las categorías distintas
@@ -91,13 +99,7 @@ public class Game extends AppCompatActivity {
         return categorias;
     }
 
-    public String obtenerCategoria() {
-        categorias = obtenerCategorias();
-        categoria = categorias.get(0);
-        indexCategoria = 0 ;
 
-        return categoria;
-    }
 
     public void siguienteCategoria(){
         indexCategoria++;
@@ -123,7 +125,7 @@ public class Game extends AppCompatActivity {
         }
     }
 
-    public void Siguiente() throws InterruptedException {
+    public void siguientePregunta() throws InterruptedException {
         borrarTodo();
         if (fila.moveToNext()){
             String nucleo = fila.getString(0);
@@ -219,7 +221,7 @@ public class Game extends AppCompatActivity {
         } else {
             Toast.makeText(this,"Respuesta Incorrecta", Toast.LENGTH_SHORT).show();
         }
-        Siguiente();
+        siguientePregunta();
 
     }
 
