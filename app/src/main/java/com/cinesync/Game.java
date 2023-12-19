@@ -1,5 +1,7 @@
 package com.cinesync;
 
+import static java.lang.Thread.sleep;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -22,15 +24,17 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class Game extends AppCompatActivity {
     TextView categoriaText;
-
     TextView nucleoText;
     DbHelper admin;
     String categoria;
+    List<String> categorias;
+    int indexCategoria;
     ImageButton ImgOp1,ImgOp2,ImgOp3,ImgOp4;
     TextView TxOp1,TxOp2,TxOp3,TxOp4;
     boolean tipoImagen = false;
@@ -64,7 +68,7 @@ public class Game extends AppCompatActivity {
 
     }
 
-    public String obtenerCategoria() {
+    public List<String> obtenerCategorias() {
         SQLiteDatabase bd = admin.getReadableDatabase();
         List<String> categorias = new ArrayList<>(); // Obtener todas las categorías distintas
 
@@ -80,12 +84,30 @@ public class Game extends AppCompatActivity {
         fila.close();
 
         if (!categorias.isEmpty()) {
-            Random random = new Random();
-            int indiceAleatorio = random.nextInt(categorias.size()); // Obtener índice aleatorio
-            return categorias.get(indiceAleatorio); // Devolver categoría aleatoria
+            Collections.shuffle(categorias);
         } else {
-            return "Sin categorías disponibles";
+            Toast.makeText(this,"Sin categorias", Toast.LENGTH_SHORT).show();
         }
+        return categorias;
+    }
+
+    public String obtenerCategoria() {
+        categorias = obtenerCategorias();
+        categoria = categorias.get(0);
+        indexCategoria = 0 ;
+
+        return categoria;
+    }
+
+    public void siguienteCategoria(){
+        indexCategoria++;
+        if (indexCategoria > categorias.size()){
+            Toast.makeText(this,"Has completado todas las categorias", Toast.LENGTH_SHORT).show();
+        } else {
+            categoria = categorias.get(indexCategoria);
+            categoriaText.setText(categoria);
+        }
+        crearCategoria(categoria);
     }
 
     public void crearCategoria(String cat){
@@ -101,7 +123,7 @@ public class Game extends AppCompatActivity {
         }
     }
 
-    public void Siguiente(){
+    public void Siguiente() throws InterruptedException {
         borrarTodo();
         if (fila.moveToNext()){
             String nucleo = fila.getString(0);
@@ -110,7 +132,9 @@ public class Game extends AppCompatActivity {
             int respuestaCorrecta = fila.getInt(3);
             crearPregunta(nucleo,respustasTexto,respuestasImagenes,respuestaCorrecta);
         } else {
-            finCategoria = true;
+            Toast.makeText(this,"Cateogoria Completada", Toast.LENGTH_SHORT).show();
+            sleep(3);
+            siguienteCategoria();
         }
     }
 
@@ -152,7 +176,7 @@ public class Game extends AppCompatActivity {
         TxOp4.setText("");
     }
 
-    public void pulsado(View view){
+    public void pulsado(View view) throws InterruptedException {
         int respuesta = -1;
 
         if (tipoImagen){

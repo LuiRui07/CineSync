@@ -6,7 +6,6 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -87,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void pulsado (View v) {
-        Intent intento = new Intent(this,MainActivity2.class);
+        Intent intento = new Intent(this, Inicio.class);
         Bundle n = new Bundle();
         n.putString("variable","hola");
         intento.putExtras((n));

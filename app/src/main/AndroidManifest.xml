@@ -18,7 +18,7 @@
             android:name=".Game"
             android:exported="false" />
         <activity
-            android:name=".MainActivity2"
+            android:name=".Inicio"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
