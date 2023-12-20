@@ -50,6 +50,11 @@ public class Game extends AppCompatActivity {
             ImgOp3 = findViewById(R.id.imageButton3);
             ImgOp4 = findViewById(R.id.imageButton4);
 
+            ImgOp1.setVisibility(View.GONE);
+            ImgOp2.setVisibility(View.GONE);
+            ImgOp3.setVisibility(View.GONE);
+            ImgOp4.setVisibility(View.GONE);
+
             TxOp1 = findViewById(R.id.respuesta1);
             TxOp2 = findViewById(R.id.respuesta2);
             TxOp3 = findViewById(R.id.respuesta3);
@@ -167,7 +172,6 @@ public class Game extends AppCompatActivity {
             int respuestaCorrecta = fila.getInt(3);
             crearPregunta(nucleo,respustasTexto,respuestasImagenes,respuestaCorrecta);
         } else {
-            Toast.makeText(this,R.string.CategoriaCompletada, Toast.LENGTH_SHORT).show();
             sleep(3);
             siguienteCategoria();
         }
@@ -186,7 +190,11 @@ public class Game extends AppCompatActivity {
                 ImageButton imageButton = imageButtonsArray[i];
                 imageButton.setVisibility(View.VISIBLE);
                 // Utiliza Picasso para cargar la imagen en el ImageButton
-                Picasso.get().load(enlace).into(imageButton);
+                Picasso.get()
+                    .load(enlace)
+                    .resize(450,450)
+                    .centerCrop()
+                    .into(imageButton);
             }
         } else {
             tipoImagen = false;
