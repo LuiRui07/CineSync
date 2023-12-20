@@ -162,7 +162,7 @@ public class Game extends AppCompatActivity {
 
     public void crearCategoria(String cat){
         SQLiteDatabase bd = admin.getReadableDatabase();
-        Cursor fila = bd.rawQuery("select nucleo,respuestasTexto,respuestasImagenes,respuestaCorrecta from preguntas where tag='"+cat+"'",null);
+        Cursor fila = bd.rawQuery("select nucleo,respuestasTexto,respuestasImagenes,respuestaCorrecta from preguntas where tag=?",new String[]{cat});
         if (fila.moveToFirst()) {
                 String nucleo = fila.getString(0);
                 String respustasTexto = fila.getString(1);
