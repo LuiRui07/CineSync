@@ -130,7 +130,7 @@ public class Game extends AppCompatActivity {
 
     public void siguienteCategoria(){
         indexCategoria++;
-        if (indexCategoria > categorias.size()){
+        if (indexCategoria > categorias.size()-1){
             Toast.makeText(this,R.string.JuegoTerminado, Toast.LENGTH_SHORT).show();
             Intent finJuego = new Intent(this, FinPartida.class);
             finJuego.putExtra("puntuacion", puntuacion);

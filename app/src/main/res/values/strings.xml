@@ -19,5 +19,6 @@
     <string name="randomBrando">What is the name of the character played by Marlon Brando in The Godfather?</string>
     <string name="randomForce">From what movie is the famous phrase: May the force be with you?</string>
     <string name="randomDeNiro">What is the iconic line from the Movie Taxi Driver spoken by Robert De Niro?</string>
-    <string name="puntuacion">Congratulations your score is</string>
+    <string name="puntuacionFinal">Congratulations your score is</string>
+    <string name="finJuego">Game Finished!</string>
 </resources>
