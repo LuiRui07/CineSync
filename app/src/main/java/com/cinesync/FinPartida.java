@@ -21,9 +21,10 @@ public class FinPartida extends AppCompatActivity {
 
         Bundle datos = getIntent().getExtras();
         int puntuacion = datos.getInt("puntuacion");
+        int totalPreguntas = datos.getInt("totalPreguntas");
         mensajeFinText.setText(R.string.finJuego);
         String tuPuntuacion = getString(R.string.puntuacionFinal);
-        puntuacionText.setText((tuPuntuacion +" " + puntuacion));
+        puntuacionText.setText((tuPuntuacion +" " + puntuacion + "/" + totalPreguntas));
     }
 
     public void pulsado (View v) {

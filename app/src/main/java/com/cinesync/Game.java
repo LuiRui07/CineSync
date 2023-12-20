@@ -142,12 +142,22 @@ public class Game extends AppCompatActivity {
             Toast.makeText(this,R.string.JuegoTerminado, Toast.LENGTH_SHORT).show();
             Intent finJuego = new Intent(this, FinPartida.class);
             finJuego.putExtra("puntuacion", puntuacion);
+            finJuego.putExtra("totalPreguntas", getNumeroPreguntas());
             startActivity(finJuego);
         } else {
             categoria = categorias.get(indexCategoria);
             preguntaText.setText(stringTraducido(categoria));
         }
         crearCategoria(categoria);
+    }
+
+    private int getNumeroPreguntas() {
+        SQLiteDatabase bd = admin.getReadableDatabase();
+        Cursor fila = bd.rawQuery("select count(*) from preguntas",null);
+        if (fila.moveToFirst()) {
+            return fila.getInt(0);
+        }
+        return 0;
     }
 
     public void crearCategoria(String cat){
