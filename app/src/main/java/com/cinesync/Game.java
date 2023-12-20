@@ -31,9 +31,10 @@ public class Game extends AppCompatActivity {
     ImageButton ImgOp1,ImgOp2,ImgOp3,ImgOp4;
     TextView TxOp1,TxOp2,TxOp3,TxOp4;
     boolean tipoImagen = false;
-    boolean finCategoria = false;
     Cursor fila;
     int rpCorrectaActual;
+
+    SQLiteDatabase bd;
 
     int puntuacion;
 
@@ -112,7 +113,7 @@ public class Game extends AppCompatActivity {
     }
 
     public List<String> obtenerCategorias() {
-        SQLiteDatabase bd = admin.getReadableDatabase();
+        bd = admin.getReadableDatabase();
         List<String> categorias = new ArrayList<>(); // Obtener todas las categorías distintas
 
         Cursor fila = bd.rawQuery("SELECT DISTINCT tag FROM preguntas", null);
@@ -143,6 +144,7 @@ public class Game extends AppCompatActivity {
             Intent finJuego = new Intent(this, FinPartida.class);
             finJuego.putExtra("puntuacion", puntuacion);
             finJuego.putExtra("totalPreguntas", getNumeroPreguntas());
+            this.finish();
             startActivity(finJuego);
         } else {
             categoria = categorias.get(indexCategoria);
@@ -276,6 +278,12 @@ public class Game extends AppCompatActivity {
         }
         siguientePregunta();
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        bd.close();
     }
 
 }

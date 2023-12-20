@@ -26,6 +26,8 @@ public class Inicio extends AppCompatActivity {
     }
 
     private void initCine() {
+        db.execSQL("DELETE FROM " + CineContract.CineEntry.TABLE_NAME);
+
         // Adición de valores a la BD
         ContentValues values = new ContentValues();
 
@@ -185,12 +187,6 @@ public class Inicio extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 0);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        db.close();
     }
 
     public void jugar (View v) {
