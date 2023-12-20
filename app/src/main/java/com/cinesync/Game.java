@@ -70,6 +70,9 @@ public class Game extends AppCompatActivity {
             case "director" :
                 res = getString(R.string.director);
                 break;
+            case "oscars" :
+                res = getString(R.string.oscars);
+                break;
             case "fecha" :
                 res = getString(R.string.fecha);
                 break;
@@ -181,6 +184,7 @@ public class Game extends AppCompatActivity {
             for (int i = 0; i < enlacesArray.length && i < imageButtonsArray.length; i++) {
                 String enlace = enlacesArray[i];
                 ImageButton imageButton = imageButtonsArray[i];
+                imageButton.setVisibility(View.VISIBLE);
                 // Utiliza Picasso para cargar la imagen en el ImageButton
                 Picasso.get().load(enlace).into(imageButton);
             }
@@ -198,10 +202,10 @@ public class Game extends AppCompatActivity {
     }
 
     public void borrarTodo(){
-        ImgOp1.setImageDrawable(null);
-        ImgOp2.setImageDrawable(null);
-        ImgOp3.setImageDrawable(null);
-        ImgOp4.setImageDrawable(null);
+        ImgOp1.setVisibility(View.GONE);
+        ImgOp2.setVisibility(View.GONE);
+        ImgOp3.setVisibility(View.GONE);
+        ImgOp4.setVisibility(View.GONE);
         TxOp1.setText("");
         TxOp2.setText("");
         TxOp3.setText("");
