@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
 
-
+/*
         // Pregunta 3
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "director");
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://www.naoslibros.es/media/img/portadas/_visd_0000JPG02EA2.jpg,https://m.media-amazon.com/images/M/MV5BODA2MjU1NTI1MV5BMl5BanBnXkFtZTgwOTU4ODIwMjE@._V1_FMjpg_UX1000_.jpg,https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg,https://m.media-amazon.com/images/M/MV5BY2QzYTQyYzItMzAwYi00YjZlLThjNTUtNzMyMDdkYzJiNWM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 3);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
-
+*/
 
         // Pregunta 4
         values.clear();
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         //---- TAG RANDOM ----
-        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "Random");
-        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "¿Quien dirigio la película Titanic?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "randomT");
+        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "Stanley Kubrick, Steven Spielberg, James Cameron, Alfred Hitchcock");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, ""); // Assuming there is no image URL for this entry
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 2);
@@ -113,8 +113,8 @@ public class MainActivity extends AppCompatActivity {
         // Inserting values for the second entry
 
 
-        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "Random");
-        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "¿Cual es el nombre del personaje que interpreta Marlon Brando en El Padrino?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "randomB");
+        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "Vito Corleone, Michael Corleone, Sonny Corleone, Fredo Corleone");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, ""); // Assuming there is no image URL for this entry
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 0);
@@ -124,8 +124,8 @@ public class MainActivity extends AppCompatActivity {
         // Inserting values for the third entry
 
 
-        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "Random");
-        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "¿De qué película es la famosa frase: Que la fuerza te acompañe?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "randomF");
+        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, ""); // Leave it empty as there is no RespuestasTexto
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://m.media-amazon.com/images/M/MV5BYWFjZmE2NGYtNGIzYi00Nzc2LTlhZWMtMTNkOTBkOTQ0MTJmXkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_FMjpg_UX1000_.jpg");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 3);
@@ -135,8 +135,8 @@ public class MainActivity extends AppCompatActivity {
         // Inserting values for the fourth entry
 
 
-        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "Random");
-        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "¿Cuál es la famosa frase dicha por Robert De Niro en Taxi Driver?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "RandomD");
+        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "I’m the king of the world!, You talking to me?, Say hello to my little friend!");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, ""); // Assuming there is no image URL for this entry
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         // Pregunta 1
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Schindler’s List");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "¿En qué año se estrenó la película Schindler’s List?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "1993, 1990, 1995");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 0);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Fight Club");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "¿En qué año se estrenó la película Fight Club?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "1991, 1990, 1995, 1999");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 3);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "The Lord of the Rings: The Return of the King");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "¿En qué año se estrenó la película The Lord of the Rings: The Return of the King?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "2001, 2003, 2007");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -177,7 +177,7 @@ public class MainActivity extends AppCompatActivity {
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Avatar");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "¿En qué año se estrenó la película Avatar?");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "2009, 2011, 2005, 2003");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 0);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
         db = admin.getWritableDatabase();
 
 
-        initCine();
+        //initCine();
     }
 
 
