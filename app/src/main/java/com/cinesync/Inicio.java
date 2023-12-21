@@ -123,7 +123,7 @@ public class Inicio extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, ""); // Leave it empty as there is no RespuestasTexto
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://m.media-amazon.com/images/M/MV5BYWFjZmE2NGYtNGIzYi00Nzc2LTlhZWMtMTNkOTBkOTQ0MTJmXkEyXkFqcGdeQXVyMTkzODUwNzk@._V1_FMjpg_UX1000_.https://es.web.img3.acsta.net/pictures/19/07/17/09/56/2643815,https://i.blogs.es/23bbf2/starwars-stylec/450_1000.jpg,https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/peliculas/john-wick-pacto-de-sangre/120113874-1-esl-ES/John-Wick-Pacto-de-sangre.png,https://www.mubis.es/media/users/7286/83626/portada-dvd-la-lego-pelicula-original.jpg");
-        values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 3);
+        values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
 
 
@@ -132,7 +132,7 @@ public class Inicio extends AppCompatActivity {
 
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "RandomD");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "I’m the king of the world!, You talking to me?, Say hello to my little friend!");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "I’m the king of the world!, You talking to me?, Say hello to my little friend!, The eyes chico they never lie");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, ""); // Assuming there is no image URL for this entry
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -142,7 +142,7 @@ public class Inicio extends AppCompatActivity {
         // Pregunta 1
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Schindler’s List");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "1993, 1990, 1995");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "1993, 1990, 1995, 2001");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 0);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
@@ -162,7 +162,7 @@ public class Inicio extends AppCompatActivity {
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "fecha");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "The Lord of the Rings: The Return of the King");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "2001, 2003, 2007");
+        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "2001, 2003, 2007, 2010");
         values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
