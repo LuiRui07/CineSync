@@ -193,7 +193,7 @@ public class Game extends AppCompatActivity {
     //Aqui las creamos como tal 1 a 1.
         rpCorrectaActual = rpC;
         nucleoText.setText(nuc);
-        if (!TextUtils.isEmpty(rpImg)){ //Habria que tener en cuenta si hay 3 o 4 imagenes
+        if (!TextUtils.isEmpty(rpImg)){
             tipoImagen = true;
             String[] enlacesArray = rpImg.split(",");
             ImageButton[] imageButtonsArray = {ImgOp1, ImgOp2, ImgOp3, ImgOp4};
