@@ -11,21 +11,25 @@
         android:id="@+id/respuesta1"
         android:layout_width="178dp"
         android:layout_height="109dp"
+        android:background="@drawable/bordered_background"
         android:onClick="pulsado"
         android:textSize="24sp"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/respuesta2"
-        android:layout_width="176dp"
+        android:layout_width="178dp"
         android:layout_height="109dp"
         android:onClick="pulsado"
         android:textSize="24sp"
+        android:background="@drawable/bordered_background"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.931"
@@ -35,30 +39,33 @@
 
     <TextView
         android:id="@+id/respuesta3"
-        android:layout_width="101dp"
-        android:layout_height="63dp"
+        android:layout_width="178dp"
+        android:layout_height="109dp"
+        android:background="@drawable/bordered_background"
+        android:gravity="center"
         android:onClick="pulsado"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.068"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <TextView
         android:id="@+id/respuesta4"
-        android:layout_width="101dp"
-        android:layout_height="63dp"
+        android:layout_width="178dp"
+        android:layout_height="109dp"
+        android:background="@drawable/bordered_background"
+        android:gravity="center"
         android:onClick="pulsado"
         android:textSize="24sp"
-        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <TextView
         android:id="@+id/nucleo"
@@ -127,8 +134,8 @@
         app:layout_constraintEnd_toEndOf="@+id/imageButton2"
         app:layout_constraintHorizontal_bias="0.004"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respuesta3"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -141,7 +148,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.976"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/respuesta4"
-        app:layout_constraintVertical_bias="0.033" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

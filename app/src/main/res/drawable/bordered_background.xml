@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bordes del fondo -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Color de fondo -->
+            <corners android:radius="8dp"/> <!-- Bordes redondeados, ajusta según tu preferencia -->
+        </shape>
+    </item>
+
+    <!-- Bordes exteriores -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent"/> <!-- Color transparente -->
+            <stroke
+                android:width="7dp"
+            android:color="#0d6aaa"/>
+            <corners android:radius="8dp"/> <!-- Bordes redondeados, ajusta según tu preferencia -->
+        </shape>
+    </item>
+</layer-list>

@@ -50,17 +50,6 @@ public class Inicio extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 1);
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
 
-        /*
-        // Pregunta 3
-        values.clear();
-        values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "director");
-        values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Greta Gerwig");
-        values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "");
-        values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://www.naoslibros.es/media/img/portadas/_visd_0000JPG02EA2.jpg,https://m.media-amazon.com/images/M/MV5BODA2MjU1NTI1MV5BMl5BanBnXkFtZTgwOTU4ODIwMjE@._V1_FMjpg_UX1000_.jpg,https://m.media-amazon.com/images/M/MV5BMDIzODcyY2EtMmY2MC00ZWVlLTgwMzAtMjQwOWUyNmJjNTYyXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg,https://m.media-amazon.com/images/M/MV5BY2QzYTQyYzItMzAwYi00YjZlLThjNTUtNzMyMDdkYzJiNWM4XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg");
-        values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, 3);
-        db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
-        */
-
         // Pregunta 4
         values.clear();
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "director");
@@ -85,7 +74,7 @@ public class Inicio extends AppCompatActivity {
         values.put(CineContract.CineEntry.COLUMN_NAME_TAG, "oscars");
         values.put(CineContract.CineEntry.COLUMN_NAME_NUCLEO, "Brad Pitt");
         values.put(CineContract.CineEntry.COLUMN_NAME_TEXT, "");
-        values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://es.web.img3.acsta.net/pictures/19/07/17/09/56/2643815.jpg,https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg,https://pics.filmaffinity.com/El_curioso_caso_de_Benjamin_Button-553974725-large.jpg,https://biblioclm.castillalamancha.es/sites/biblioclm.castillalamancha.es/files/actividades-culturales/moneyball.jpeg");
+        values.put(CineContract.CineEntry.COLUMN_NAME_IMG, "https://es.web.img3.acsta.net/pictures/19/07/17/09/56/2643815.jpg,https://m.media-amazon.com/images/M/MV5BMmEzNTkxYjQtZTc0MC00YTVjLTg5ZTEtZWMwOWVlYzY0NWIwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg,https://www.funeralnatural.net/sites/default/files/pelicula/imagen/el_curioso_caso_de_benjamin.jpg,https://biblioclm.castillalamancha.es/sites/biblioclm.castillalamancha.es/files/actividades-culturales/moneyball.jpeg");
         values.put(CineContract.CineEntry.COLUMN_NAME_RIGHT, "0");
         db.insert(CineContract.CineEntry.TABLE_NAME, null, values);
 
